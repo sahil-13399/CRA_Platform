@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { useHistory } from 'react-router'
+import logo from '../CR+A New FINAL Primary.jpeg'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,23 +23,23 @@ const useStyles = makeStyles((theme) => ({
 
 function Header() {
     const classes = useStyles();
-
+    const history = useHistory();
     return (
         <div>
-            <AppBar position="static">
+            <AppBar position="static" style = {{backgroundColor:'whitesmoke',color:'black',marginBottom:100}}>
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                     <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                    CR&A
+                    <img onClick = {() => history.push("/")} src = {logo} height="60" ></img>
                     </Typography>
-                    <div className = "NavButton" style = {{justifyContent:'space-around'}}>
-                        <Button color="inherit">Queue</Button>
-                        <Button color="inherit">Clients</Button>
-                        <Button color="inherit">Materials</Button>
-                        <Button color="inherit">Generate Quote</Button>
-                        <Button color="inherit">Log out</Button>
+                    <div className = "NavButton" style = {{display:'flex',justifyContent:'space-between'}}>
+                        <Button style = {{marginRight : 15,fontSize:15}} >Queue</Button>
+                        <Button style = {{marginRight : 15,fontSize:15}} >Clients</Button>
+                        <Button style = {{marginRight : 15,fontSize:15}} >Materials</Button>
+                        <Button onClick = {() => history.push("/quote")} style = {{marginRight : 15,fontSize:15}} >Generate Quote</Button>
+                        <Button style = {{fontSize:15}} color="inherit">Log out</Button>
                     </div>
                 </Toolbar>
             </AppBar>
