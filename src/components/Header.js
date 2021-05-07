@@ -35,7 +35,7 @@ function Header() {
                     <img onClick = {() => history.push("/")} src = {logo} height="60" ></img>
                     </Typography>
                     <div className = "NavButton" style = {{display:'flex',justifyContent:'space-between'}}>
-                        <Button style = {{marginRight : 15,fontSize:15}} >Queue</Button>
+                        <Button onClick = {() => history.push("/queue")} style = {{marginRight : 15,fontSize:15}} >Queue</Button>
                         <Button style = {{marginRight : 15,fontSize:15}} >Clients</Button>
                         <Button style = {{marginRight : 15,fontSize:15}} >Materials</Button>
                         <Button onClick = {() => history.push("/quote")} style = {{marginRight : 15,fontSize:15}} >Generate Quote</Button>

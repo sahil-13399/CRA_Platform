@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import Table from './components/Table'
+import Queue from './components/Queue';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       <Switch>
           <Route path="/quote">
             
+          </Route>
+          <Route path="/queue">
+            <Queue />
           </Route>
           <Route path = "/">
             <Table />
