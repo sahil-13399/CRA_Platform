@@ -25,6 +25,7 @@ const rows = [
   createData('15002261','General Motors','Paul Balmer','ALex Kumar','Post-Press','www.google.com')
 ];
 
+
 export default function DenseTable() {
   const classes = useStyles();
 
@@ -33,7 +34,7 @@ export default function DenseTable() {
       <TableContainer component={Paper}>
         <Table className={classes.table} size="big" aria-label="a dense table">
           <TableHead>
-            <TableRow>
+            <TableRow >
               <TableCell width ='100px' style = {{fontWeight:'bold',borderRight : ' 5px solid lightgrey',textAlign:'center'}}>Job ID</TableCell>
               <TableCell width ='150px' style = {{fontWeight:'bold',borderRight : ' 5px solid lightgrey',textAlign:'center'}}>Client Company</TableCell>
               <TableCell width ='100px' style = {{fontWeight:'bold',borderRight : ' 5px solid lightgrey',textAlign:'center'}}>Contact</TableCell>
@@ -44,16 +45,16 @@ export default function DenseTable() {
           </TableHead>
           <TableBody>
             {rows.map((row) => (
-              <TableRow key={row.name}>
-                <TableCell component="th" scope="row">
-                  {row.jobID}
-                </TableCell>
-                <TableCell width ='150px' style = {{textAlign:'center'}}>{row.clientCompany}</TableCell>
-                <TableCell style = {{textAlign:'center'}}>{row.contact}</TableCell>
-                <TableCell style = {{textAlign:'center'}}>{row.salesRep}</TableCell>
-                <TableCell style = {{textAlign:'center'}}>{row.status}</TableCell>
-                <TableCell width = '30px' style = {{textAlign:'center'}} ><a href={row.image}>{row.image}</a></TableCell>
-              </TableRow>
+                <TableRow key={row.name}>
+                  <TableCell component="th" scope="row">
+                    {row.jobID}
+                  </TableCell>
+                  <TableCell width ='150px' style = {{textAlign:'center'}}>{row.clientCompany}</TableCell>
+                  <TableCell style = {{textAlign:'center'}}>{row.contact}</TableCell>
+                  <TableCell style = {{textAlign:'center'}}>{row.salesRep}</TableCell>
+                  <TableCell style = {{textAlign:'center'}}>{row.status}</TableCell>
+                  <TableCell width = '30px' style = {{textAlign:'center'}} ><a href={row.image}>{row.image}</a></TableCell>
+                </TableRow>
             ))}
           </TableBody>
         </Table>

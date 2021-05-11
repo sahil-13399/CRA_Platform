@@ -18,7 +18,7 @@ function Table2() {
       
       const rows = [
         createData('18008264','04/20/20','Job 1','Summary','Auto Email','$ 1000.90','Accepted'),
-        createData('12004262','/03/29/19','Job 2','Summary','Client Site','$ 15000.23','Denied'),
+        createData('12004262','03/29/19','Job 2','Summary','Client Site','$ 15000.23','Denied'),
       ];
 
       
