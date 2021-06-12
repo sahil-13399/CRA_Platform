@@ -8,6 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import './Table.css';
+import { Button } from '@material-ui/core';
+import Modal from '@material-ui/core/Modal';
 
 const useStyles = makeStyles({
   table: {
@@ -27,10 +29,21 @@ const rows = [
 
 
 export default function DenseTable() {
+  const [open, setOpen] = React.useState(false);
   const classes = useStyles();
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
   return (
     <div className = "table">
+      <Button style = {{left:1000,marginBottom:20}} variant="contained" color="secondary" onClick={handleOpen}>Filter</Button>
       <TableContainer component={Paper}>
         <Table className={classes.table} size="big" aria-label="a dense table">
           <TableHead>
@@ -47,7 +60,7 @@ export default function DenseTable() {
             {rows.map((row) => (
                 <TableRow key={row.name}>
                   <TableCell component="th" scope="row">
-                    {row.jobID}
+                    <a href = "">{row.jobID}</a>  
                   </TableCell>
                   <TableCell width ='150px' style = {{textAlign:'center'}}>{row.clientCompany}</TableCell>
                   <TableCell style = {{textAlign:'center'}}>{row.contact}</TableCell>

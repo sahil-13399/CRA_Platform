@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import Table from './components/Table'
 import Queue from './components/Queue';
+import Client from './components/Client';
+import AddClient from './components/AddClient';
 
 function App() {
   return (
@@ -15,11 +17,14 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-          <Route path="/quote">
-            
+            <Route path="/client">
+              <Client />
+            </Route>
+          <Route path="/addClient">
+              <AddClient />
           </Route>
           <Route path="/queue">
-            <Queue />
+            
           </Route>
           <Route path = "/">
             <Table />

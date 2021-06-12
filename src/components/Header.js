@@ -36,7 +36,7 @@ function Header() {
                     </Typography>
                     <div className = "NavButton" style = {{display:'flex',justifyContent:'space-between'}}>
                         <Button onClick = {() => history.push("/queue")} style = {{marginRight : 15,fontSize:15}} >Queue</Button>
-                        <Button style = {{marginRight : 15,fontSize:15}} >Clients</Button>
+                        <Button onClick = {() => history.push("/client")} style = {{marginRight : 15,fontSize:15}} >Clients</Button>
                         <Button style = {{marginRight : 15,fontSize:15}} >Materials</Button>
                         <Button onClick = {() => history.push("/quote")} style = {{marginRight : 15,fontSize:15}} >Generate Quote</Button>
                         <Button style = {{fontSize:15}} color="inherit">Log out</Button>
