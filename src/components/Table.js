@@ -8,14 +8,31 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import './Table.css';
-import { Button } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+import ModalComponent from './ModalComponent';
 
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
 });
+
+const useStyles2 = makeStyles((theme) => ({
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
 
 function createData(jobID, clientCompany, contact, salesRep, status,image) {
   return { jobID, clientCompany, contact, salesRep, status,image };
@@ -31,6 +48,7 @@ const rows = [
 export default function DenseTable() {
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
+  const classes2 = useStyles2();
 
   const handleOpen = () => {
     setOpen(true);
@@ -44,6 +62,25 @@ export default function DenseTable() {
   return (
     <div className = "table">
       <Button style = {{left:1000,marginBottom:20}} variant="contained" color="secondary" onClick={handleOpen}>Filter</Button>
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={classes2.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes2.paper}>
+            <ModalComponent />
+          </div>
+        </Fade>
+      </Modal>
+
       <TableContainer component={Paper}>
         <Table className={classes.table} size="big" aria-label="a dense table">
           <TableHead>
