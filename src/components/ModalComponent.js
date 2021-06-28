@@ -10,7 +10,7 @@ function ModalComponent() {
     const [status, setStatus] = useState("");
     return (
         <div style = {{display:'flex',flexDirection:'column'}}>
-            <TextField style = {{marginBottom:20}} placeholder = "JobID" value={jobID} onChange={(e) => setjobID(e.target.value)}/>
+            <TextField style = {{marginBottom:20,width:250}} placeholder = "JobID" value={jobID} onChange={(e) => setjobID(e.target.value)}/>
             <TextField style = {{marginBottom:20}} placeholder = "Company" value={company} onChange={(e) => setCompany(e.target.value)}/>
             <TextField style = {{marginBottom:20}} placeholder = "Contact" value={contact} onChange={(e) => setContact(e.target.value)}/> 
             <TextField style = {{marginBottom:20}} placeholder = "Sales Rep" value={sales} onChange={(e) => setSales(e.target.value)}/>
